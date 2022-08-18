@@ -14,7 +14,7 @@
 
 
 ## Install and Configure Backend (Node.js)
-- WIP
+- Work in progress
     - Login
     - Get Inventory
 
@@ -34,3 +34,12 @@ or
 ![Dashboard](./assets/dashboard-1.png)
 
 
+# Project Structure
+```
+.
+├── assets                  # contains images used for documentation
+├── frontend                # HTML, CSS, JS
+├── backend                 # webserver/REST API and Database
+│   ├── webserver           # Node.js 
+│   ├── database            # Database (MYSQL or MongoDB) 
+```
