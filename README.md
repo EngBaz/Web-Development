@@ -13,3 +13,24 @@
 - This will download the code repository to your local computer
 
 
+## Install and Configure Backend (Node.js)
+- WIP
+    - Login
+    - Get Inventory
+
+## Install and Configure Mini Database (MYSQL or MongoDB)
+- Work in progress
+    - Users Table
+    - Inventory
+
+## Front-end Design
+### Login Page:
+![Login Page](./assets/login.png)
+or
+![Login Page2](./assets/login-2.png)
+### Dashboard:
+- Retrieve list of items from backend
+
+![Dashboard](./assets/dashboard-1.png)
+
+
