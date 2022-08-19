@@ -1,4 +1,14 @@
-# Get Started
+# Project Structure
+```
+.
+├── assets                  # contains images used for documentation
+├── frontend                # HTML, CSS, JS
+├── backend                 # webserver/REST API and Database
+│   ├── webserver           # Node.js 
+│   ├── database            # Database (MYSQL or MongoDB) 
+```
+
+# Getting Started
 
 ## Install and Configure Github Desktop
 - Open your browser and navigate to: https://desktop.github.com/ 
@@ -112,12 +122,3 @@ or
 ![Dashboard](./assets/dashboard-1.png)
 
 
-# Project Structure
-```
-.
-├── assets                  # contains images used for documentation
-├── frontend                # HTML, CSS, JS
-├── backend                 # webserver/REST API and Database
-│   ├── webserver           # Node.js 
-│   ├── database            # Database (MYSQL or MongoDB) 
-```
