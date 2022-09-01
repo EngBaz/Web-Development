@@ -107,9 +107,59 @@ For this one we will use it to simplify setting up the database server.
 
 
 ## Install and Configure Backend (Node.js)
-- Work in progress to build REST API
-    - Login
-    - Get Inventory
+- Open your browser and navigate to https://nodejs.org/en/
+- Download NodeJS for Windows - Choose LTS version
+    - Current version is 16.17.0 LTS but it may vary when you download it
+    - Just make sure you are download the LTS version
+- Double click and launch the NodeJS Installer
+    - Click Next (first page of the installer) => Accept the agreement => Next (Destination Folder)
+    - (Custom Setup page) - Make sure "Add to PATH" has both Node.js and npm & npm modules
+    - Next => ... => Install 
+    - Finish
+
+## Install Postman
+- Open your browser and navigate to https://www.postman.com/downloads/
+- Click on "Windows xx bit" to download
+- Once downloaded launch the installer and install Postman
+
+## Install VSCode
+- Open your browser and navigate to https://code.visualstudio.com/
+- Click on "Download for Windows" to download it
+
+## Install npm modules and launch Node.js Backend
+- Open Github Desktop and make sure you get the latest version of the github project
+    - You can do so by clicking "Repository" => "Pull" or by clicking on "Fetch origin"
+- Now that you have the latest version of the code, open Visual Studio Code
+- Click File => Open Folder => Navigate to the project folder and click "Select Folder", you should see something similar to this:
+![VSCode](./assets/vscode-01.png)
+- Note the folders and files on the left hand side (assets, backend, .gitignore, README.md). Make sure these folders and files are at the root of your project, if not repeat the previous step and double click on "practice-project" folder, then click on "Select Folder"
+- Now open the terminal window in VSCode, you can do so by clicking on "Terminal" => "New Terminal" on the top bar
+- Once opened, type in `ls` and the folders and files that appear should be the same files and folders mentioned in the Note above (assets, backend, .gitignore, README.md)
+- Navigate to the backend code by typing in: `cd backend\webserver\`
+- Install node modules by typing in `npm install`
+- Once the install completes, run the webserve using `node app.js` (make sure you have 'cd' into the directory that contains app.js)
+    - The output from the above step should be: `Webserver listening on port 3000`
+    - To test it out, open your browser and type in: `http://localhost:3000` the output should be "Hello from NodeJS Webserver!"
+
+## Launch Postman
+- Launch Postman which is the software we downloaded previously (This will help you simulate HTTP requests to your webserver)
+- Once you launch it, if asked to sign in, just select continue offline.
+- Press on the keyboard `Ctrl + O` (O like Oscar) or click on the top left of the window =>  File => Import
+- On the "Import" screen, select File => "Upload Files"
+- Navigate to "practice-project\backend\webserver\postman" and select "Practice-Project.postman_collection.json", click Open
+- Click "Import"
+- In the left panel you should see "Practice-Project"
+- Expand it and you should see 2 methods: Login and Get Inventory
+- Click on "(POST) Login" and click on "Send" (if it crashes, make sure you have launched "Docker Desktop" and your database is up and running)
+    - If it crashes, you will need to restart your server using `node app.js` (steps in the previous section)
+    - If it succeeds, you should get back a message saying "Login Successful". During the call from Postman to your webserver, Postman sent the webserver a POST request with a method / action "login". It also sent it the username: "roland.baz" and a password: "ABCD". The webserver when it received the request made a call to the database to check if theu username and password are valid and if so, it returned a message with a token. Try changing the username or password to a random value and click "Send" again. To change the username or password, in postman, find the "Body" tab once you have selected the "Login" method and note the username and password.
+
+- Now let's test "Get Inventory", click on "Get Inventory" and click on "Send"
+    - Note, the method has changed, it is now a "GET" and the method name is called "inventory"
+    - Navigate to the "Body" in "Get Inventory" and note the "token" we are sending. Try changing the token and click "Send" again to see what happens.
+- Final step, take a look at the backend code and what is it doing and try to follow along it should be straightforward
+    - In particular, inspect `app.js`, `inventory.js` and `login.js`
+- Now that we have proven the backend is working, the final stepw would be to create the frontend which we can work on together.
 
 ## Front-end Design
 ### Login Page:

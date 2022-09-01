@@ -36,7 +36,7 @@ app.post('/login', async (req, res) => {
     }
 
     return res.status(200).send({
-        message: "Login Successfull",
+        message: "Login Successful",
         token: "ABCD"
     });
 });
